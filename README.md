@@ -89,7 +89,7 @@ Run
     --cluster <ECS cluster name> \
     --count 1 \
     --launch-type FARGATE \
-    --network-configuration '{ "awsvpcConfiguration": {"subnets": [ '<ECS Subnets>' ], "securityGroups": [ '<ECS Security Group' ], "assignPublicIp": "'ENABLED'"}}' \
+    --network-configuration '{ "awsvpcConfiguration": {"subnets": [ '<ECS Subnets>' ], "securityGroups": [ '<ECS Security Group' ], "assignPublicIp": "ENABLED"}}' \
     --overrides '{ "containerOverrides": [ { "name": "app", "command": ["updatedb", "-s"] } ] }'
 `
 ```
