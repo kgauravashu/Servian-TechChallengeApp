@@ -1,0 +1,13 @@
+version: '3.1'
+
+services:
+
+  terraform:
+    image: hashicorp/terraform:1.4.0
+    volumes:
+      - $PWD/terraform:/terraform
+      - $HOME/.aws:/root/.aws
+    working_dir: /terraform
+    environment:
+      - AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY
