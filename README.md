@@ -89,8 +89,7 @@ Run
     --cluster <ECS cluster name> \
     --count 1 \
     --launch-type FARGATE \
-    --network-configuration '{ "awsvpcConfiguration": {"subnets": [ '<ECS Subnets>' ], "securityGroups": [ '<ECS Security Group' ], "assignPublicIp": "ENABLED"}}' \
-    --overrides '{ "containerOverrides": [ { "name": "app", "command": ["updatedb", "-s"] } ] }'
+    --network-configuration '{ "awsvpcConfiguration": {"subnets": [ '<ECS Subnets>' ], "securityGroups": [ '<ECS Security Group' ], "assignPublicIp": "ENABLED"}}'
 `
 ```
 As Task Definition, ECS Cluster, ECS subnet, ECS Security group and Database instance with database app are already created above using Terraform code and you can check from the output of Terraform run.
