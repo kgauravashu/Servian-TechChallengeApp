@@ -95,6 +95,76 @@ Run
 ```
 As Task Definition, ECS Cluster, ECS subnet, ECS Security group and Database instance with database app are already created above using Terraform code and you can check from the output of Terraform run.
 
+### Update database
+
+it'a one time task, Connect the Postgres server and run the command `go run .` inside the checkout repo.
+output comes like 
+
+```
+$ go run .
+go: downloading github.com/spf13/cobra v1.6.1
+go: downloading github.com/spf13/viper v1.15.0
+go: downloading github.com/lib/pq v1.10.7
+go: downloading go.etcd.io/bbolt v1.3.7
+go: downloading github.com/GeertJohan/go.rice v1.0.3
+go: downloading github.com/gorilla/mux v1.8.0
+go: downloading github.com/fsnotify/fsnotify v1.6.0
+go: downloading github.com/mitchellh/mapstructure v1.5.0
+go: downloading github.com/spf13/afero v1.9.4
+go: downloading github.com/spf13/jwalterweatherman v1.1.0
+go: downloading github.com/spf13/cast v1.5.0
+go: downloading github.com/spf13/pflag v1.0.5
+go: downloading github.com/inconshreveable/mousetrap v1.1.0
+go: downloading github.com/daaku/go.zipexe v1.0.2
+go: downloading golang.org/x/sys v0.5.0
+go: downloading github.com/subosito/gotenv v1.4.2
+go: downloading github.com/hashicorp/hcl v1.0.0
+go: downloading gopkg.in/ini.v1 v1.67.0
+go: downloading github.com/magiconair/properties v1.8.7
+go: downloading github.com/pelletier/go-toml/v2 v2.0.6
+go: downloading gopkg.in/yaml.v3 v3.0.1
+go: downloading golang.org/x/text v0.7.0
+
+ .:ooooool,      .:odddddl;.      .;ooooc. .l,          ;c.    ::.      'coddddoc'         ,looooooc.
+'kk;....';,    .lOx:'...,cxkc.   .dOc....  .xO'        ,0d.   .kk.    ,xko;....;okx,     .xkl,....;dOl.
+:Xl           .xO,         :0d.  ;Kl        ,0o       .dO'    .kk.   :0d.        .d0:   .xO'        lK:
+.oOxc,.       lKl...........oK:  :Kc         l0;      :Kc     .kk.  .Ok.          .kO.  '0d         '0d
+  .;ldddo;.   oXkdddddddddddxx,  :Kc         .kk.    .Ox.     .kk.  '0d            d0'  '0d         '0d
+       .cOk.  lKc                :Kc          :0l    o0;      .kk.  .Ok.          .k0'  '0d         '0d
+         cXc  .xO;         ..    :Kc          .d0'  ;0o       .kk.   :0d.        .dN0'  '0d         '0d
+,c,....'cOx.   .lOxc,...':dkc.   :Kc           'Ox',kk.       .kk.    ,xko;'..';okk00,  '0d         '0d   ';;;;;;;;;;,.
+'looooool;.      .;ldddddo:.     'l'            .lool.         ::       'coddddoc'.;l.  .l;         .c;  .cxxxxxxxxxxo.
+
+This application is used as part of challenging potential candiates at Sevian.
+
+Please visit http://Servian.com for more details
+
+Usage:
+  TechChallengeApp [command]
+
+Available Commands:
+  completion  Generate the autocompletion script for the specified shell
+  help        Help about any command
+  serve       Starts the web server
+  updatedb    Updates DB
+
+Flags:
+  -h, --help      help for TechChallengeApp
+  -v, --version   version for TechChallengeApp
+
+Use "TechChallengeApp [command] --help" for more information about a command.
+```
+
+Then run the command:
+
+```
+$ go run . updatedb
+Dropping and recreating database: app
+Dropping and recreating table: tasks
+Seeding table with data
+```
+
+
 ### Delete the stack
 
 Once you tested it, it is recommended to delete all resources created on your AWS account to save company bills :D .
