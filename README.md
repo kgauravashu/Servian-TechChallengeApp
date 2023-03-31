@@ -157,7 +157,23 @@ Use "TechChallengeApp [command] --help" for more information about a command.
 Then run the command:
 
 ```
-$ go run . updatedb
+$ go build -o TechChallengeApp
+$ ./TechChallengeApp updatedb
+Dropping and recreating database: app
+DROP DATABASE IF EXISTS app
+CREATE DATABASE app
+WITH
+OWNER = postgres
+ENCODING = 'UTF8'
+LC_COLLATE = 'en_US.utf8'
+LC_CTYPE = 'en_US.utf8'
+TABLESPACE = pg_default
+CONNECTION LIMIT = -1
+TEMPLATE template0;
+Dropping and recreating table: tasks
+DROP TABLE IF EXISTS tasks CASCADE
+CREATE TABLE tasks ( id SERIAL PRIMARY KEY, completed boolean NOT NULL, priority integer NOT NULL, title text NOT NULL)
+Seeding table with data
 Dropping and recreating database: app
 Dropping and recreating table: tasks
 Seeding table with data
