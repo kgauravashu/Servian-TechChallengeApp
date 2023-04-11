@@ -5,6 +5,11 @@
 
 ### Technical Overview
 
+Architecture design:
+
+![image](https://user-images.githubusercontent.com/113504777/231156192-b1dffae3-5009-479e-a4d7-4e67d637e2ef.png)
+
+
 In this assignment, I chose ECS FARAGATE for deployment of an application and RDS Postgresql 10.17 for the Database 
 
 ### AWS Cloud
